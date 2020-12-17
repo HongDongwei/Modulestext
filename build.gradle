@@ -1,0 +1,49 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply from: './config.gradle'
+buildscript {
+
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.6.3'
+        classpath "com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4"
+        classpath 'digital.wup:android-maven-publish:3.6.2'
+//        classpath "com.github.dcendents:android-maven-gradle-plugin:2.1"
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+//        maven {
+//            url LOCAL_REPO_URL
+//        }
+        //mbp 13
+//        maven {
+//            url '/Volumes/SdCard/Development/environment/.m2/localmaven'
+//        }
+        //mbp 15
+//        maven {
+//            url "${rootDir}/maven"
+//        }
+        maven {
+            url "https://jitpack.io"
+        }
+        jcenter()
+        google()
+    }
+}
+subprojects {
+    apply from: '../base_top.gradle'
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+public boolean isMbp15() {
+    return true
+}

@@ -1,0 +1,20 @@
+autil
+    background
+    base
+    basic
+    check
+    download
+    gradle
+    permission
+    qr
+    router
+    step
+    tts
+    ui
+    video
+    vpn
+    web
+    worker
+    zxinglite<resources>
+    <string name="app_name">autil</string>
+</resources>
